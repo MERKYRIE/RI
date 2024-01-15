@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="_MVSI\_\RI.cpp" />
+    <ClCompile Include="_MVSI\_\Vector.cpp" />
+    <ClCompile Include="_MVSI\_\Ray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_MVSI\_\Vector.hpp" />
+    <ClInclude Include="_MVSI\_\RI.hpp" />
+    <ClInclude Include="_MVSI\_\Ray.hpp" />
+  </ItemGroup>
+</Project>
