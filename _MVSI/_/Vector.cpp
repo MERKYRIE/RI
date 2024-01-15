@@ -142,7 +142,7 @@ namespace NRI{
     }
 
     void CVector::FPrintAsColor() const noexcept{
-        std::cout << static_cast<std::uint16_t>(255.999F * VX) << static_cast<std::uint16_t>(255.999F * VY) << " " << static_cast<std::uint16_t>(255.999F * VZ) << "\n";
+        std::cout << static_cast<std::uint16_t>(255.999F * VX) << " " << static_cast<std::uint16_t>(255.999F * VY) << " " << static_cast<std::uint16_t>(255.999F * VZ) << "\n";
     }
 
     CVector operator+(const CVector& PVector , float PValue) noexcept{

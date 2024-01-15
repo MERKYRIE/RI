@@ -4,10 +4,18 @@
     <ClCompile Include="_MVSI\_\RI.cpp" />
     <ClCompile Include="_MVSI\_\Vector.cpp" />
     <ClCompile Include="_MVSI\_\Ray.cpp" />
+    <ClCompile Include="_MVSI\_\Hittable.cpp" />
+    <ClCompile Include="_MVSI\_\Sphere.cpp" />
+    <ClCompile Include="_MVSI\_\HitInformation.cpp" />
+    <ClCompile Include="_MVSI\_\HittableCollection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_MVSI\_\Vector.hpp" />
     <ClInclude Include="_MVSI\_\RI.hpp" />
     <ClInclude Include="_MVSI\_\Ray.hpp" />
+    <ClInclude Include="_MVSI\_\Hittable.hpp" />
+    <ClInclude Include="_MVSI\_\Sphere.hpp" />
+    <ClInclude Include="_MVSI\_\HitInformation.hpp" />
+    <ClInclude Include="_MVSI\_\HittableCollection.hpp" />
   </ItemGroup>
 </Project>
