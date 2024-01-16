@@ -2,17 +2,15 @@
 
 #include"RI.hpp"
 
-#include"HitInformation.hpp"
-#include"Ray.hpp"
-#include"Vector.hpp"
+#include"Information.hpp"
+#include"Interval.hpp"
 
 namespace NRI{
+    class CInformation;
     class CRay;
-    class CHitInformation;
     
     class CHittable{
-        public :
         public : virtual ~CHittable() noexcept = default;
-        public : virtual bool FHit(const CRay& PRay , float PRayTimeMinimum , float PRayTimeMaximum , CHitInformation& PInformation) const noexcept = 0;
+        public : virtual bool FHit(const CRay& PRay , const CInterval& PTime , CInformation& PInformation) const noexcept = 0;
     };
 }

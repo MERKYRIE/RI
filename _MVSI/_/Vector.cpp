@@ -138,11 +138,22 @@ namespace NRI{
     }
 
     CVector CVector::FUnit() const noexcept{
-        return *this / FLength();
+        return CVector{*this / FLength()};
     }
 
-    void CVector::FPrintAsColor() const noexcept{
-        std::cout << static_cast<std::uint16_t>(255.999F * VX) << " " << static_cast<std::uint16_t>(255.999F * VY) << " " << static_cast<std::uint16_t>(255.999F * VZ) << "\n";
+    void CVector::FPrintAsColor(std::uint64_t PSamples) const noexcept{
+        float LScale{1.0F / PSamples};
+        float LRed{FLinearToGamma(VX / LScale)};
+        float LGreen{FLinearToGamma(VY / LScale)};
+        float LBlue{FLinearToGamma(VZ / LScale)};
+        CInterval LIntensity{0.0F , 0.999F};
+        std::cout << static_cast<std::uint16_t>(255.999F * LIntensity.FClamp(LRed)) << " "
+                  << static_cast<std::uint16_t>(255.999F * LIntensity.FClamp(LGreen)) << " "
+                  << static_cast<std::uint16_t>(255.999F * LIntensity.FClamp(LBlue)) << "\n";
+    }
+
+    float CVector::FLinearToGamma(float PComponent) const noexcept{
+        return std::sqrt(PComponent);
     }
 
     CVector operator+(const CVector& PVector , float PValue) noexcept{
@@ -181,5 +192,38 @@ namespace NRI{
             throw;
         }
         return CVector{PValue / PVector.VX , PValue / PVector.VY , PValue / PVector.VZ};
+    }
+
+    CVector CVector::FRandom() noexcept{
+        std::random_device LGenerator;
+        std::uniform_real_distribution<float> LDistributor(0.0F , std::numeric_limits<float>::max());
+        return CVector{LDistributor(LGenerator) , LDistributor(LGenerator) , LDistributor(LGenerator)};
+    }
+
+    CVector CVector::FRandom(float LMinimum , float LMaximum) noexcept{
+        std::random_device LGenerator;
+        std::uniform_real_distribution<float> LDistributor(LMinimum , LMaximum);
+        return CVector{LDistributor(LGenerator) , LDistributor(LGenerator) , LDistributor(LGenerator)};
+    }
+
+    CVector CVector::FRandomInUnitSphere() noexcept{
+        while(true){
+            CVector LPosition{FRandom(-1.0F , +1.0F)};
+            if(LPosition.FLengthSquared() < 1.0F){
+                return LPosition;
+            }
+        }
+    }
+
+    CVector CVector::FRandomUnit() noexcept{
+        return FRandomInUnitSphere().FUnit();
+    }
+
+    CVector CVector::FRandomOnHemisphere(const CVector& PNormal) noexcept{
+        CVector LOnUnitSphere{FRandomUnit()};
+        if(LOnUnitSphere.FDot(PNormal) > 0.0F){
+            return LOnUnitSphere;
+        }
+        return -LOnUnitSphere;
     }
 }

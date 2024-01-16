@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,18 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="_MVSI\_\HitInformation.cpp" />
+    <ClCompile Include="_MVSI\_\Camera.cpp" />
+    <ClCompile Include="_MVSI\_\Information.cpp" />
     <ClCompile Include="_MVSI\_\Hittable.cpp" />
-    <ClCompile Include="_MVSI\_\HittableCollection.cpp" />
+    <ClCompile Include="_MVSI\_\Collection.cpp" />
+    <ClCompile Include="_MVSI\_\Interval.cpp" />
     <ClCompile Include="_MVSI\_\Ray.cpp" />
     <ClCompile Include="_MVSI\_\RI.cpp" />
     <ClCompile Include="_MVSI\_\Sphere.cpp" />
     <ClCompile Include="_MVSI\_\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="_MVSI\_\HitInformation.hpp" />
+    <ClInclude Include="_MVSI\_\Camera.hpp" />
+    <ClInclude Include="_MVSI\_\Information.hpp" />
     <ClInclude Include="_MVSI\_\Hittable.hpp" />
-    <ClInclude Include="_MVSI\_\HittableCollection.hpp" />
+    <ClInclude Include="_MVSI\_\Collection.hpp" />
+    <ClInclude Include="_MVSI\_\Interval.hpp" />
     <ClInclude Include="_MVSI\_\Ray.hpp" />
     <ClInclude Include="_MVSI\_\RI.hpp" />
     <ClInclude Include="_MVSI\_\Sphere.hpp" />

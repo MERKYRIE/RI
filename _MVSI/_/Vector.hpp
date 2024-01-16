@@ -2,6 +2,8 @@
 
 #include"RI.hpp"
 
+#include"Interval.hpp"
+
 namespace NRI{
     class CVector{
         private : float VX;
@@ -31,7 +33,8 @@ namespace NRI{
         public : float FDot(const CVector& PVector) const noexcept;
         public : CVector FCross(const CVector& PVector) const noexcept;
         public : CVector FUnit() const noexcept;
-        public : void FPrintAsColor() const noexcept;
+        public : void FPrintAsColor(std::uint64_t PSamples) const noexcept;
+        public : float FLinearToGamma(float PComponent) const noexcept;
 
         public : friend CVector operator+(const CVector& PVector , float PValue) noexcept;
         public : friend CVector operator-(const CVector& PVector , float PValue) noexcept;
@@ -41,5 +44,11 @@ namespace NRI{
         public : friend CVector operator-(float PValue , const CVector& PVector) noexcept;
         public : friend CVector operator*(float PValue , const CVector& PVector) noexcept;
         public : friend CVector operator/(float PValue , const CVector& PVector);
+
+        public : static CVector FRandom() noexcept;
+        public : static CVector FRandom(float LMinimum , float LMaximum) noexcept;
+        public : static CVector FRandomInUnitSphere() noexcept;
+        public : static CVector FRandomUnit() noexcept;
+        public : static CVector FRandomOnHemisphere(const CVector& PNormal) noexcept;
     };
 }

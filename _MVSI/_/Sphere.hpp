@@ -2,8 +2,7 @@
 
 #include"RI.hpp"
 
-#include"HitInformation.hpp"
-#include"Hittable.hpp"
+#include"Information.hpp"
 
 namespace NRI{
     class CSphere : public CHittable{
@@ -11,6 +10,6 @@ namespace NRI{
         private : float VRadius;
 
         public : CSphere(const CVector& PCenter , float PRadius) noexcept;
-        public : bool FHit(const CRay& PRay , float PRayTimeMinimum , float PRayTimeMaximum , CHitInformation& PInformation) const noexcept override;
+        public : bool FHit(const CRay& PRay , const CInterval& PTime , CInformation& PInformation) const noexcept override;
     };
 }

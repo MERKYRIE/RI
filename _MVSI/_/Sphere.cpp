@@ -6,27 +6,26 @@ namespace NRI{
         VRadius = PRadius;
     }
 
-    bool CSphere::FHit(const CRay& PRay , float PRayTimeMinimum , float PRayTimeMaximum , CHitInformation& PInformation) const noexcept{
+    bool CSphere::FHit(const CRay& PRay , const CInterval& PTime , CInformation& PInformation) const noexcept{
         CVector LOMinusC{PRay.FOrigin() - VCenter};
         float LA{PRay.FDirection().FLengthSquared()};
-        float LHalfB{LOMinusC.FDot(PRay.FDirection())};
+        float LHalfOfB{LOMinusC.FDot(PRay.FDirection())};
         float LC{LOMinusC.FLengthSquared() - VRadius * VRadius};
-        float LDiscriminant{LHalfB * LHalfB - LA * LC};
+        float LDiscriminant{LHalfOfB * LHalfOfB - LA * LC};
         if(LDiscriminant < 0.0F){
             return false;
         }
         float LDiscriminantSquareRoot{std::sqrt(LDiscriminant)};
-        float LRoot{(-LHalfB - LDiscriminantSquareRoot) / LA};
-        if(LRoot <= PRayTimeMinimum || PRayTimeMaximum <= LRoot){
-            LRoot = (-LHalfB + LDiscriminantSquareRoot) / LA;
-            if(LRoot <= PRayTimeMinimum || PRayTimeMaximum <= LRoot){
+        float LRoot{(-LHalfOfB - LDiscriminantSquareRoot) / LA};
+        if(!PTime.FSurrounds(LRoot)){
+            LRoot = (-LHalfOfB + LDiscriminantSquareRoot) / LA;
+            if(!PTime.FSurrounds(LRoot)){
                 return false;
             }
         }
-        PInformation.VTime = LRoot;
-        PInformation.VCoordinates = PRay.FAt(PInformation.VTime);
-        CVector LOutwardNormal{(PInformation.VCoordinates - VCenter) / VRadius};
-        PInformation.FSetFaceNormal(PRay , LOutwardNormal);
+        PInformation.FTime(LRoot).FCoordinates(PRay.FAt(PInformation.FTime()));
+        CVector LOutwardNormal{(PInformation.FCoordinates() - VCenter) / VRadius};
+        PInformation.FFront(PRay , LOutwardNormal).FNormal(LOutwardNormal);
         return true;
     }
 }
