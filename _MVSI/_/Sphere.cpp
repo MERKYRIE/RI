@@ -1,9 +1,10 @@
 #include"Sphere.hpp"
 
 namespace NRI{
-    CSphere::CSphere(const CVector& PCenter , float PRadius) noexcept{
+    CSphere::CSphere(const CVector& PCenter , float PRadius , const std::shared_ptr<CMaterial>& PMaterial) noexcept{
         VCenter = PCenter;
         VRadius = PRadius;
+        VMaterial = PMaterial;
     }
 
     bool CSphere::FHit(const CRay& PRay , const CInterval& PTime , CInformation& PInformation) const noexcept{
@@ -25,7 +26,7 @@ namespace NRI{
         }
         PInformation.FTime(LRoot).FCoordinates(PRay.FAt(PInformation.FTime()));
         CVector LOutwardNormal{(PInformation.FCoordinates() - VCenter) / VRadius};
-        PInformation.FFront(PRay , LOutwardNormal).FNormal(LOutwardNormal);
+        PInformation.FFront(PRay , LOutwardNormal).FNormal(LOutwardNormal).FMaterial(VMaterial);
         return true;
     }
 }

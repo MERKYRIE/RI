@@ -156,6 +156,10 @@ namespace NRI{
         return std::sqrt(PComponent);
     }
 
+    bool CVector::FIsNearZero() const noexcept{
+        return std::abs(VX) < 0.0001F && std::abs(VY) < 0.0001F && std::abs(VZ) < 0.0001F;
+    }
+
     CVector operator+(const CVector& PVector , float PValue) noexcept{
         return CVector{PVector.VX + PValue , PVector.VY + PValue , PVector.VZ + PValue};
     }
@@ -225,5 +229,9 @@ namespace NRI{
             return LOnUnitSphere;
         }
         return -LOnUnitSphere;
+    }
+
+    CVector CVector::FReflect(const CVector& PDirection , const CVector& PNormal) noexcept{
+        return PDirection - 2.0F * PDirection.FDot(PNormal) * PNormal;
     }
 }

@@ -35,6 +35,7 @@ namespace NRI{
         public : CVector FUnit() const noexcept;
         public : void FPrintAsColor(std::uint64_t PSamples) const noexcept;
         public : float FLinearToGamma(float PComponent) const noexcept;
+        public : bool FIsNearZero() const noexcept;
 
         public : friend CVector operator+(const CVector& PVector , float PValue) noexcept;
         public : friend CVector operator-(const CVector& PVector , float PValue) noexcept;
@@ -50,5 +51,6 @@ namespace NRI{
         public : static CVector FRandomInUnitSphere() noexcept;
         public : static CVector FRandomUnit() noexcept;
         public : static CVector FRandomOnHemisphere(const CVector& PNormal) noexcept;
+        public : static CVector FReflect(const CVector& PDirection , const CVector& PNormal) noexcept;
     };
 }

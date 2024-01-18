@@ -7,6 +7,7 @@
 
 namespace NRI{
     class CHittable;
+    class CMaterial;
     class CRay;
     
     class CInformation{
@@ -14,6 +15,7 @@ namespace NRI{
         private : float VTime;
         private : bool VFront;
         private : CVector VNormal;
+        private : std::shared_ptr<CMaterial> VMaterial;
 
         public : const CVector& FCoordinates() const noexcept;
         public : CInformation& FCoordinates(const CVector& PCoordinates) noexcept;
@@ -23,5 +25,7 @@ namespace NRI{
         public : CInformation& FFront(const CRay& PRay , const CVector& POutward) noexcept;
         public : const CVector& FNormal() const noexcept;
         public : CInformation& FNormal(const CVector& POutward) noexcept;
+        public : const std::shared_ptr<CMaterial>& FMaterial() const noexcept;
+        public : CInformation& FMaterial(const std::shared_ptr<CMaterial>& PMaterial) noexcept;
     };
 }

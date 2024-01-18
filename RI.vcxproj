@@ -133,6 +133,9 @@
     <ClCompile Include="_MVSI\_\Hittable.cpp" />
     <ClCompile Include="_MVSI\_\Collection.cpp" />
     <ClCompile Include="_MVSI\_\Interval.cpp" />
+    <ClCompile Include="_MVSI\_\Lambertian.cpp" />
+    <ClCompile Include="_MVSI\_\Material.cpp" />
+    <ClCompile Include="_MVSI\_\Metal.cpp" />
     <ClCompile Include="_MVSI\_\Ray.cpp" />
     <ClCompile Include="_MVSI\_\RI.cpp" />
     <ClCompile Include="_MVSI\_\Sphere.cpp" />
@@ -144,6 +147,9 @@
     <ClInclude Include="_MVSI\_\Hittable.hpp" />
     <ClInclude Include="_MVSI\_\Collection.hpp" />
     <ClInclude Include="_MVSI\_\Interval.hpp" />
+    <ClInclude Include="_MVSI\_\Lambertian.hpp" />
+    <ClInclude Include="_MVSI\_\Material.hpp" />
+    <ClInclude Include="_MVSI\_\Metal.hpp" />
     <ClInclude Include="_MVSI\_\Ray.hpp" />
     <ClInclude Include="_MVSI\_\RI.hpp" />
     <ClInclude Include="_MVSI\_\Sphere.hpp" />

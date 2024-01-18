@@ -10,6 +10,9 @@
     <ClCompile Include="_MVSI\_\Collection.cpp" />
     <ClCompile Include="_MVSI\_\Interval.cpp" />
     <ClCompile Include="_MVSI\_\Camera.cpp" />
+    <ClCompile Include="_MVSI\_\Material.cpp" />
+    <ClCompile Include="_MVSI\_\Lambertian.cpp" />
+    <ClCompile Include="_MVSI\_\Metal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_MVSI\_\Vector.hpp" />
@@ -21,5 +24,8 @@
     <ClInclude Include="_MVSI\_\Collection.hpp" />
     <ClInclude Include="_MVSI\_\Interval.hpp" />
     <ClInclude Include="_MVSI\_\Camera.hpp" />
+    <ClInclude Include="_MVSI\_\Material.hpp" />
+    <ClInclude Include="_MVSI\_\Lambertian.hpp" />
+    <ClInclude Include="_MVSI\_\Metal.hpp" />
   </ItemGroup>
 </Project>

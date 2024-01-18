@@ -36,4 +36,13 @@ namespace NRI{
         VNormal = VFront ? POutward : -POutward;
         return *this;
     }
+
+    const std::shared_ptr<CMaterial>& CInformation::FMaterial() const noexcept{
+        return VMaterial;
+    }
+
+    CInformation& CInformation::FMaterial(const std::shared_ptr<CMaterial>& PMaterial) noexcept{
+        VMaterial = PMaterial;
+        return *this;
+    }
 }

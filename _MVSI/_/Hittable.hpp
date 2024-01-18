@@ -10,7 +10,7 @@ namespace NRI{
     class CRay;
     
     class CHittable{
-        public : virtual ~CHittable() noexcept = default;
         public : virtual bool FHit(const CRay& PRay , const CInterval& PTime , CInformation& PInformation) const noexcept = 0;
+        public : virtual ~CHittable() noexcept = default;
     };
 }
