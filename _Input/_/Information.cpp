@@ -24,7 +24,7 @@ namespace NRI{
     }
     
     CInformation& CInformation::FFront(const CRay& PRay , const CVector& POutward) noexcept{
-        VFront = PRay.FDirection().FDot(POutward);
+        VFront = PRay.FDirection().FDot(POutward) < 0;
         return *this;
     }
 

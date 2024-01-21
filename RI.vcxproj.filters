@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="_MVSI\_\RI.cpp" />
-    <ClCompile Include="_MVSI\_\Vector.cpp" />
-    <ClCompile Include="_MVSI\_\Ray.cpp" />
-    <ClCompile Include="_MVSI\_\Hittable.cpp" />
-    <ClCompile Include="_MVSI\_\Sphere.cpp" />
-    <ClCompile Include="_MVSI\_\Information.cpp" />
-    <ClCompile Include="_MVSI\_\Collection.cpp" />
-    <ClCompile Include="_MVSI\_\Interval.cpp" />
-    <ClCompile Include="_MVSI\_\Camera.cpp" />
-    <ClCompile Include="_MVSI\_\Material.cpp" />
-    <ClCompile Include="_MVSI\_\Lambertian.cpp" />
-    <ClCompile Include="_MVSI\_\Metal.cpp" />
+    <ClInclude Include="_Input\_\Camera.hpp" />
+    <ClInclude Include="_Input\_\Collection.hpp" />
+    <ClInclude Include="_Input\_\Hittable.hpp" />
+    <ClInclude Include="_Input\_\Information.hpp" />
+    <ClInclude Include="_Input\_\Interval.hpp" />
+    <ClInclude Include="_Input\_\Lambertian.hpp" />
+    <ClInclude Include="_Input\_\Material.hpp" />
+    <ClInclude Include="_Input\_\Metal.hpp" />
+    <ClInclude Include="_Input\_\Ray.hpp" />
+    <ClInclude Include="_Input\_\RI.hpp" />
+    <ClInclude Include="_Input\_\Sphere.hpp" />
+    <ClInclude Include="_Input\_\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="_MVSI\_\Vector.hpp" />
-    <ClInclude Include="_MVSI\_\RI.hpp" />
-    <ClInclude Include="_MVSI\_\Ray.hpp" />
-    <ClInclude Include="_MVSI\_\Hittable.hpp" />
-    <ClInclude Include="_MVSI\_\Sphere.hpp" />
-    <ClInclude Include="_MVSI\_\Information.hpp" />
-    <ClInclude Include="_MVSI\_\Collection.hpp" />
-    <ClInclude Include="_MVSI\_\Interval.hpp" />
-    <ClInclude Include="_MVSI\_\Camera.hpp" />
-    <ClInclude Include="_MVSI\_\Material.hpp" />
-    <ClInclude Include="_MVSI\_\Lambertian.hpp" />
-    <ClInclude Include="_MVSI\_\Metal.hpp" />
+    <ClCompile Include="_Input\_\Camera.cpp" />
+    <ClCompile Include="_Input\_\Collection.cpp" />
+    <ClCompile Include="_Input\_\Hittable.cpp" />
+    <ClCompile Include="_Input\_\Information.cpp" />
+    <ClCompile Include="_Input\_\Interval.cpp" />
+    <ClCompile Include="_Input\_\Lambertian.cpp" />
+    <ClCompile Include="_Input\_\Material.cpp" />
+    <ClCompile Include="_Input\_\Metal.cpp" />
+    <ClCompile Include="_Input\_\Ray.cpp" />
+    <ClCompile Include="_Input\_\RI.cpp" />
+    <ClCompile Include="_Input\_\Sphere.cpp" />
+    <ClCompile Include="_Input\_\Vector.cpp" />
   </ItemGroup>
 </Project>

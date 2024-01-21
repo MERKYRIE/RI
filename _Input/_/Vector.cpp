@@ -210,7 +210,7 @@ namespace NRI{
         return CVector{LDistributor(LGenerator) , LDistributor(LGenerator) , LDistributor(LGenerator)};
     }
 
-    CVector CVector::FRandomInUnitSphere() noexcept{
+    CVector CVector::FRandomUnitSphere() noexcept{
         while(true){
             CVector LPosition{FRandom(-1.0F , +1.0F)};
             if(LPosition.FLengthSquared() < 1.0F){
@@ -220,7 +220,7 @@ namespace NRI{
     }
 
     CVector CVector::FRandomUnit() noexcept{
-        return FRandomInUnitSphere().FUnit();
+        return FRandomUnitSphere().FUnit();
     }
 
     CVector CVector::FRandomOnHemisphere(const CVector& PNormal) noexcept{

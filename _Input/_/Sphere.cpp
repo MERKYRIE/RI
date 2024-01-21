@@ -25,8 +25,8 @@ namespace NRI{
             }
         }
         PInformation.FTime(LRoot).FCoordinates(PRay.FAt(PInformation.FTime()));
-        CVector LOutwardNormal{(PInformation.FCoordinates() - VCenter) / VRadius};
-        PInformation.FFront(PRay , LOutwardNormal).FNormal(LOutwardNormal).FMaterial(VMaterial);
+        CVector LOutward{(PInformation.FCoordinates() - VCenter) / VRadius};
+        PInformation.FFront(PRay , LOutward).FNormal(LOutward).FMaterial(VMaterial);
         return true;
     }
 }

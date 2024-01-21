@@ -48,7 +48,7 @@ namespace NRI{
 
         public : static CVector FRandom() noexcept;
         public : static CVector FRandom(float LMinimum , float LMaximum) noexcept;
-        public : static CVector FRandomInUnitSphere() noexcept;
+        public : static CVector FRandomUnitSphere() noexcept;
         public : static CVector FRandomUnit() noexcept;
         public : static CVector FRandomOnHemisphere(const CVector& PNormal) noexcept;
         public : static CVector FReflect(const CVector& PDirection , const CVector& PNormal) noexcept;

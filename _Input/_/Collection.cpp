@@ -1,7 +1,7 @@
 #include"Collection.hpp"
 
 namespace NRI{
-    CCollection::CCollection(std::shared_ptr<CHittable> PHittable) noexcept{
+    CCollection::CCollection(const std::shared_ptr<CHittable>& PHittable) noexcept{
         FAdd(PHittable);
     }
 
@@ -10,7 +10,7 @@ namespace NRI{
         return *this;
     }
 
-    CCollection& CCollection::FAdd(std::shared_ptr<CHittable> PHittable) noexcept{
+    CCollection& CCollection::FAdd(const std::shared_ptr<CHittable>& PHittable) noexcept{
         VPool.push_back(PHittable);
         return *this;
     }
